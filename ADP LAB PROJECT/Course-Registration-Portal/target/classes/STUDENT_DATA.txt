@@ -1,0 +1,6 @@
+stu_shantanu,India123,STUDENT,shantanu,lenka,shantanu.lenka@email.com,STU001,Computer Science,2
+stu_sekhar,SBP123,STUDENT,sekhar,dash,sekhar.das@email.com,STU002,CSE,3
+stu_kaustav,BBI123,STUDENT,kaustav,rath,kaustav.rath@email.com,STU003,IT,1
+stu_sandeep,BBS123,STUDENT,sandeep,sahoo,sandeep.sahoo@email.com,STU004,CSIT,4
+stu_baga,Bit123,STUDENT,baga,sahoo,baga.sahoo@email.com,STU005,Biology,2
+stu_swastik,SDN123,STUDENT,swastik,panda,swastik.panda@email.com,STU005,Mathematics,2

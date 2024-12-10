@@ -1,0 +1,5 @@
+prof_adp,adp123,PROFESSOR,adp,prof,adp.prof@university.com,EMP001,Application Development Project using JAVA
+prof_dwt,dwt456,PROFESSOR,dwt,prof,dwt.prof@university.com,EMP002,Deep learning with tensorflow
+prof_dm,dm789,PROFESSOR,dm,prof,dm.prof@email.com,EMP003,Data mining
+prof_ems,ems321,PROFESSOR,ems,prof,ems.prof@email.com,EMP004,Environment Studies
+prof_iml,iml456,PROFESSOR,iml,prof,iml.prof@email.com,EMP005,Introduction to machine learning

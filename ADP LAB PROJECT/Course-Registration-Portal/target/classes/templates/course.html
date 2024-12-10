@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Courses</title>
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div th:replace="~{fragments/header :: header}" th:with="userRole=${role}"></div>
+		<div class="col-md-6"> 
+			<form th:action="@{/course/search}" method="get" class="mb-3">
+	            <div class="input-group">
+	                <input type="text" class="form-control" placeholder="Course name or course code" name="keyword">
+	                <button type="submit" class="btn btn-primary">Search</button>
+	            </div>
+	        </form>
+		</div> 
+		<h3>Course List</h3>
+		<br>
+		<a th:href="@{/course/add}" th:if="${role == 'PROFESSOR'}">
+	        <button type="button" class="btn btn-primary view-button">Add Course</button>
+	        <br><br>
+	    </a>
+	    <table class="table table-bordered">
+	        <thead>
+	        <tr>
+	            <th>Course Name</th>
+	            <th>Course Code</th>
+	            <th>Professor</th>
+	            <th th:if="${role == 'STUDENT'}">Actions</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        <tr th:each="course : ${courseList}">
+	            <td th:text="${course.courseName}"></td>
+	            <td th:text="${course.courseCode}"></td>
+	            <td th:text="${course.professor.firstName + ' ' + course.professor.lastName}"></td>
+	            <td th:if="${role == 'STUDENT'}" >
+	                <a th:href="@{/course/details(courseId=${course.id})}" class="btn btn-primary">View Details</a>
+					<span th:if="${course.lessonPlanPath != null}">
+				    <a th:href="@{${course.lessonPlanPath}}" target="_blank" class="btn btn-secondary">View Lesson Plan</a></span>
+	            </td>
+	        </tr>
+	        </tbody>
+    	</table>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
